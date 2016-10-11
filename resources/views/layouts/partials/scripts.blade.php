@@ -16,6 +16,9 @@
 <script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js') }}" type="text/javascript"></script>
 
+<!-- select2 -->
+<script src="{{ asset('/plugins/select2/select2.min.js') }}" type="text/javascript"></script>
+
 <script>
     $(document).ready(function () {
         $('.datatable').DataTable({
