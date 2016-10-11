@@ -167,7 +167,8 @@ return [
          * Package Service Providers...
          */
 
-        //
+        Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
+
 
         /*
          * Application Service Providers...
@@ -193,6 +194,7 @@ return [
 
     'aliases' => [
 
+        'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
         'App' => Illuminate\Support\Facades\App::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
