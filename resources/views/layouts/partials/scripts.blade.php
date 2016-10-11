@@ -24,6 +24,9 @@
         $('.datatable').DataTable({
             responsive: true
         });
+
+        //fade out flash message after 3 seconds
+        $('.flash-message').delay(5000).fadeOut(1000);
     });
 </script>
 

@@ -32,18 +32,19 @@ desired effect
 <body class="skin-blue sidebar-mini">
 <div class="wrapper">
 
-    @include('layouts.partials.mainheader')
+@include('layouts.partials.mainheader')
 
-    @include('layouts.partials.sidebar')
+@include('layouts.partials.sidebar')
 
-    <!-- Content Wrapper. Contains page content -->
+<!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
 
-        @include('layouts.partials.contentheader')
+    @include('layouts.partials.contentheader')
 
-        <!-- Main content -->
+    <!-- Main content -->
         <section class="content">
-            <!-- Your Page Content Here -->
+        @yield('layouts.partials.alerts')
+        <!-- Your Page Content Here -->
             @yield('main-content')
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
