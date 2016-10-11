@@ -34,4 +34,32 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Role');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function permissions()
+    {
+        return $this->belongsToMany('App\Permission');
+    }
+
+    public function hasRole($role)
+    {
+        if ($this->role->role == $role) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function hasPermission($permission)
+    {
+        foreach ($this->permissions as $p) {
+            if ($p->permission == $permission) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
