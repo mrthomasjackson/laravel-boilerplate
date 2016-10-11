@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('auth.login');
 });
+Route::get('/register', function () {
+    return redirect('/login');
+});
+
+Route::group(['middleware' => 'auth'], function () {
+
+});

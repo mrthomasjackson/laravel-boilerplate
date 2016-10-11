@@ -13,10 +13,16 @@
 					<div class="panel-heading">Home</div>
 
 					<div class="panel-body">
-						{{ trans('adminlte_lang::message.logged') }}
+						Content
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+@endsection
+
+@section('page-scripts')
+	<script>
+		//Page Scripts Here
+	</script>
 @endsection
