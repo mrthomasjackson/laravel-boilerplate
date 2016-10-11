@@ -36,7 +36,7 @@ class CreatePermissionUserTable extends Migration
      */
     public function down()
     {
-        Schema::table('machine_mold', function ($table) {
+        Schema::table('permission_user', function ($table) {
             $table->dropForeign(['permission_id']);
             $table->dropForeign(['user_id']);
 
