@@ -33,15 +33,29 @@
         <ul class="sidebar-menu">
             <li class="header">MENU</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('home') }}"><i class="fa fa-home" aria-hidden="true"></i> <span>Home</span></a></li>
-            <li><a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.anotherlink') }}</span></a></li>
-            <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>{{ trans('adminlte_lang::message.multilevel') }}</span> <i class="fa fa-angle-left pull-right"></i></a>
+            <li class="{{Request::is('home') ? 'active' : ''}}"><a href="{{ url('home') }}"><i class="fa fa-home"
+                                                                                               aria-hidden="true"></i>
+                    <span>Home</span></a></li>
+            @role('Administrator')
+            <li class="treeview {{Request::is('admin/*') ? 'active' : ''}}">
+                <a href="{{url('admin')}}"><i class="fa fa-lock" aria-hidden="true"></i> <span>Admin</span> <i
+                            class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li>
-                    <li><a href="#">{{ trans('adminlte_lang::message.linklevel2') }}</a></li>
+                    @permission('Manage Users')
+                    <li class="{{Request::is('admin/users*') ? 'active' : ''}}"><a
+                                href="{{url('/admin/users')}}">Users</a></li>
+                    @endpermission
+                    @permission('Manage Roles')
+                    <li class="{{Request::is('admin/roles*') ? 'active' : ''}}"><a
+                                href="{{url('/admin/roles')}}">Roles</a></li>
+                    @endpermission
+                    @permission('Manage Permissions')
+                    <li class="{{Request::is('admin/permissions*') ? 'active' : ''}}"><a
+                                href="{{url('/admin/permissions')}}">Permissions</a></li>
+                    @endpermission
                 </ul>
             </li>
+            @endrole
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

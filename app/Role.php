@@ -17,4 +17,13 @@ class Role extends Model
     {
         return $this->belongsToMany('App\User');
     }
+
+    public static function getAllAsArray()
+    {
+        $array = array();
+        foreach (self::all() as $value){
+            $array[$value->id] = $value->role;
+        }
+        return $array;
+    }
 }

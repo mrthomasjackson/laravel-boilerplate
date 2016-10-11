@@ -26,6 +26,16 @@ class UserSeeder extends Seeder
             'permission' => 'Manage Users'
         ]);
 
+        // Create Permission To Manage Roles
+        $manageRoles = \App\Permission::create([
+            'permission' => 'Manage Roles'
+        ]);
+
+        // Create Permission To Manage Permissions
+        $managePermissions = \App\Permission::create([
+            'permission' => 'Manage Permissions'
+        ]);
+
         // Create User With Administrative Rights
         $administratorUser = \App\User::create([
             'name' => 'Administrator',
@@ -36,6 +46,8 @@ class UserSeeder extends Seeder
 
         // Attach 'Manage Users' permission, to the administrative user.
         $administratorUser->permissions()->attach($manageUserPermission->id);
+        $administratorUser->permissions()->attach($manageRoles->id); // manage roles
+        $administratorUser->permissions()->attach($managePermissions->id); // manage permissions
 
         // Print out results
         print "User has been created \n\r";

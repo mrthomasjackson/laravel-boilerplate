@@ -43,7 +43,7 @@ desired effect
 
     <!-- Main content -->
         <section class="content">
-        @yield('layouts.partials.alerts')
+        @include('layouts.partials.alerts')
         <!-- Your Page Content Here -->
             @yield('main-content')
         </section><!-- /.content -->
