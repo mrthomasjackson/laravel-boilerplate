@@ -11,3 +11,17 @@
       Both of these plugins are recommended to enhance the
       user experience. Slimscroll is required when using the
       fixed layout. -->
+
+<!-- Datatables -->
+<script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js') }}" type="text/javascript"></script>
+
+<script>
+    $(document).ready(function () {
+        $('.datatable').DataTable({
+            responsive: true
+        });
+    });
+</script>
+
+@yield('page-scripts')
