@@ -1,4 +1,6 @@
 var elixir = require('laravel-elixir');
+require('laravel-elixir-browserify-official');
+require('laravel-elixir-vueify');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,8 +13,9 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
+elixir(function (mix) {
     mix.less('app.less');
     mix.less('admin-lte/AdminLTE.less');
     mix.less('bootstrap/bootstrap.less');
+    mix.browserify('app.js');
 });

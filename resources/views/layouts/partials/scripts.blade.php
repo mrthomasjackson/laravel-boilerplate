@@ -19,6 +19,9 @@
 <!-- select2 -->
 <script src="{{ asset('/plugins/select2/select2.min.js') }}" type="text/javascript"></script>
 
+<!-- Vue.js -->
+<script src="{{ asset('/js/vue.js') }}" type="text/javascript"></script>
+
 <script>
     $(document).ready(function () {
         $('.datatable').DataTable({
